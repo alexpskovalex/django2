@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+<!-- <body> -->
+{% load static %}
+{% block head %}
+<!-- <link rel="stylesheet" href="{% static 'style\about_us.css' %}"> -->
+{% endblock %}
+
+<!-- {% include "header.html" %} -->
+{% block content %}
+<div id="container">
+    <h2>Видео</h2>
+    <div>
+        <h2>Видео 1</h2>
+        <video src="{% static 'video1.mp4' %}" width="480" height="270" poster="{% static 'img\main_logo.jpg' %}"
+            controls="controls"></video>
+    </div>
+    <div>
+        <h2>Видео 2</h2>
+        <video src="{% static 'video2.mp4' %}" width="480" height="270" poster="{% static 'img\water1.png' %}"
+            controls="controls"></video>
+    </div>
+</div>
+{% endblock %}

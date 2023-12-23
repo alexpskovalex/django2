@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+<!-- <body> -->
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'style\links.css' %}">
+{% endblock %}
+
+<!-- {% include "header.html" %} -->
+{% block content %}
+<div id="container">
+    <div class="link_block">
+        <a href="https://geophysics.uni-dubna.ru/about-geophysics/">О геофизике</a>
+        <p class="blogpost">
+            Геофизика (от др. -греч. γῆ – «Земля», φύσις – «природа») – комплекс наук, исследующих физическими методами
+            эволюцию, строение и вещественный состав планеты Земля, а также происходящие в ней процессы.
+        </p>
+    </div>
+    <div class="link_block">
+        <a href="https://groupgeo.ru/ru/production/item/117-pks-5-2-karotazhnyj-podjomnik.html">Каротажный подьемник</a>
+        <p class="blogpost">
+            Подъемник каротажный ПКС-5 предназначен для проведения спуско-подъемных операций в полевых условиях при
+            геофизических исследованиях в скважинах на нефть и газ глубиной до 5000м при работе с грузонесущим
+            геофизическим бронированным кабелем диаметром 12,5мм, согласно стандарту СТ ЕАГО-010-01.
+        </p>
+    </div>
+    <div class="link_block">
+        <a href="https://www.mpz.ru/geofizicheskaya-tehnika/podemniki-karotajnye">ПОДЪЕМНИК КАРОТАЖНЫЙ САМОХОДНЫЙ ПКС С МЕХАНИЧЕСКИМ ПРИВОДОМ ПКС-3,5М; ПКС-5М; ПКС-7М</a>
+        <p class="blogpost">
+            Отвечая на вызовы времени и запрос на импортозамещение Мытищинский приборостроительный завод усовершенствовал гамму выпускавшихся каротажных подъемников, сделав их соответствующими мировому уровню.
+        </p>
+    </div>
+</div>
+{% endblock %}

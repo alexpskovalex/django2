@@ -1,0 +1,73 @@
+﻿{% extends "base.html" %}
+<!-- <body> -->
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'site.css' %}">
+<script src="{% static 'simple-adaptive-slider.js' %}"></script>
+<!-- <script src="{% static 'slider.js' %}"></script> -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // активация слайдера
+        new ItcSimpleSlider('.itcss', {
+            loop: true,
+            autoplay: true,
+            interval: 5000,
+            swipe: true
+        });
+    });
+</script>
+{% endblock %}
+
+<!-- {% include "header.html" %} -->
+{% block content %}
+<!-- Разметка слайдера -->
+
+
+
+<div class="container">
+    <div class="itcss">
+        <div class="itcss__wrapper">
+            <div class="itcss__items">
+                <div class="itcss__item">
+                    <img class="img-fluid" src="{% static '6.png' %}" alt="..." width="1900" height="650" loading="lazy">
+                </div>
+                <div class="itcss__item">
+                    <img class="img-fluid" src="{% static '14.png' %}" alt="..." width="1900" height="650" loading="lazy">
+                </div>
+                <div class="itcss__item">
+                    <img class="img-fluid" src="{% static '13.png' %}" alt="..." width="1900" height="650" loading="lazy">
+                </div>
+    
+            </div>
+        </div>
+    
+        <button class="itcss__btn itcss__btn_prev" role="button" data-slide="prev"></button>
+        <button class="itcss__btn itcss__btn_next" role="button" data-slide="next"></button>
+    </div>
+    
+    <h1 contenteditable>&laquo;СевЗапГидроПроект&raquo;</h1>
+    <p style="font-size: 40px; "> НАХОДИТСЯ НА СЕВЕРО-ЗАПАДЕ РОССИИ В ДРЕВНЕМ ГОРОДЕ ПСКОВЕ</p>
+    <p>Основная деятельность предприятия – разработка и изготовление наземного оборудования для производства
+        геофизических исследований и работ в скважинах. </p>
+    <p>Использование новейших технологий и индивидуальный подход к каждому заказу позволяют, обеспечить
+        конкурентоспособные цены и оперативность изготовления продукции. </p>
+    <p>Высококлассные специалисты предприятия имеют боле 20-ти лет опыта работы по выпуску наземной техники для
+        сервисных компаний нефтяной, газовой и рудной промышленности. </p>
+    <ul>
+        <li>СПЕЦИАЛЬНЫЕ ПОДЪЕМНИКИ И УСТАНОВКИ ДЛЯ РАБОТЫ С КАБЕЛЯМИ ПОВЫШЕННОЙ ОСЕВОЙ ЖЕСТКОСТИ И ПОЛИМЕРНЫМИ
+            АРМИРОВАННЫМИ ГРУЗОНЕСУЩИМИ ТРУБАМИ;</li>
+        <li>КАРОТАЖНЫЕ ПОДЪЕМНИКИ САМОХОДНЫЕ ПКС И НЕСАМОХОДНЫЕ ПКН ДЛЯ РАБОТЫ С ГРУЗОНЕСУЩИМ КАБЕЛЕМ И СКРЕБКОВОЙ
+            ПРОВОЛОКОЙ;</li>
+        <li>ЛАБОРАТОРИИ ГЕОФИЗИЧЕСКИЕ ШИРОКОГО СПЕКТРА ПРИМЕНЕНИЯ;</li>
+        <li>ПРИЕМНО-ОТДАЮЩИЕ И НАТЯЖНЫЕ УСТРОЙСТВА (КАБЕЛЬСТАНЫ);</li>
+        <li>БАРАБАНЫ, ЗАПЧАСТИ К ПКС И ЛЕБЕДКАМ.</li>
+        <li>УСТРОЙСТВА КОНТРОЛЯ КАРОТАЖА УКК;</li>
+        <li>ЛЕБЕДКИ РАЗЛИЧНОГО НАЗНАЧЕНИЯ;</li>
+        <li>ПОДАТЧИКИ ПДТ;</li>
+    </ul>
+    <p>Одним из основных принципов нашей работы является совместная с заказчиком, проработка технического задания на
+        каждую партию поставляемых машин и даже на отдельные изделия.</p>
+    <p>В каждом нашем изделии могут быть реализованы специальные требования заказчика.</p>
+    <p>Это позволяет предусмотреть все особенности предстоящей работы нашей техники.</p>
+</div>
+{% endblock %}

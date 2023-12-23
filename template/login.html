@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+{% endblock head %}
+{% block content %}
+<div id="content">
+    {% if not user.is_authenticated %}
+    <h2>Вход</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form_field">
+            <label for="{{filed.id_for_label}}">{{field.label}}</label>
+            {{field}}
+        </div>
+        {% endfor %}
+        <input class="" type="submit" value="Войти">
+    </form>
+    <div class="">
+
+        Нужен аккаунт? <a class="ml-2" href="{% url 'registration' %}">Регистрация</a>
+    </div>
+    {% else %}
+    <h2>Вы уже прошли аутентификацию</h2>
+    {% endif %}
+    {% if form.errors %}
+    <div class="">{{form.errors}}</div>
+    {% endif %}
+
+</div>
+{% endblock content %}

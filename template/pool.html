@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+<!-- <body> -->
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'site.css' %}">
+<script src="{% static 'pool.js' %}"></script>
+{% endblock %}
+
+<!-- {% include "header.html" %} -->
+{% block content %}
+{% if not result %}
+<div id="content">
+    <h2 id="head">Ваш отзыв</h2>
+    <!-- <div id="comment">Оставьте заявку и менедженр свяжеться с Вами</div> -->
+    <form action="/pool/" method="post" id="callback_form">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form_field">
+            <label for="{{filed.id_for_label}}">{{field.label}}</label>
+            {{field}}
+        </div>
+        {% endfor %}
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+{% else %}
+<div id="container">Спасибо за Отзыв!
+    <div class="form">
+
+        <div class="form_field">
+            <span>Ваше имя: </span><span>{{result.name}}</span>
+        </div>
+        <div class="form_field">
+            <span>Ваш телефон:</span><span>{{result.phone}}</span>
+        </div>
+        <div class="form_field">
+            <span>Ваш пол: </span><span>{{result.gender}}</span>
+        </div>
+        <div class="form_field">
+            <span>Получать рассылку: </span><span>{{ result.ad|yesno:'Согласен,Не согласен' }}</span>
+        </div>
+        <div class="form_field">
+            <span>Ваш email: </span><span>{{result.email}}</span>
+        </div>
+        <div class="form_field">
+            <span>Ваш отзыв: </span><span>{{result.message}}</span>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

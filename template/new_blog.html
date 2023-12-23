@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+<!-- <body> -->
+{% load static %}
+{% block head %}
+<!-- <link rel="stylesheet" href="{% static 'style\about_us.css' %}"> -->
+{% endblock %}
+
+<!-- {% include "header.html" %} -->
+{% block content %}
+<div id="container">
+    <h2>Новая запись</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form_field">
+            <label for="{{filed.id_for_label}}">{{field.label}}</label>
+            {{field}}
+        </div>
+        {% endfor %}
+        <input type="submit" class="" value="Создать запись">
+    </form>
+</div>
+{% endblock %}
